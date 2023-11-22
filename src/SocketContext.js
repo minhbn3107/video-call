@@ -36,8 +36,6 @@ const ContextProvider = ({ children }) => {
         socket.on("callEnded", () => {
             leaveCall();
         });
-
-        setCallEnded(false);
     }, []);
 
     const answerCall = () => {
