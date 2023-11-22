@@ -84,6 +84,7 @@ const ContextProvider = ({ children }) => {
 
     const leaveCall = () => {
         setCallEnded(true);
+        setCallAccepted(false);
         connectionRef.current.destroy();
 
         window.location.reload();
