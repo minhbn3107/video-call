@@ -32,6 +32,10 @@ const ContextProvider = ({ children }) => {
         socket.on("callUser", ({ from, name: callerName, signal }) => {
             setCall({ isReceivingCall: true, from, name: callerName, signal });
         });
+
+        socket.on("callEnded", () => {
+            leaveCall();
+        });
     }, []);
 
     const answerCall = () => {
